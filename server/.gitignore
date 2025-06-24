@@ -1,1 +1,2 @@
-.env
+   echo ".env" >> client/.gitignore
+   echo ".env.production" >> client/.gitignore
