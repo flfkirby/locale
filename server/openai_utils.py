@@ -39,11 +39,25 @@ def get_openai_response(user_input, location=None, profile=None):
         return []
 
 def get_route_summary(request_info, places, walking_info):
+    # Build a more structured, explicit prompt for GPT
     prompt = (
-        "Summarise this day’s walking tour as if you were writing a friendly intro paragraph in a travel guidebook.\n"
+        "You are a friendly, knowledgeable travel guidebook writer. "
+        "Given the following walking tour, write a rich, engaging summary for the user. "
+        "Start with a short intro about the route and what the user will learn or experience. "
+        "Then, for each stop, provide a bullet point with the name, a short description, and a fun fact. "
+        "After the list, summarize the total walking distance and mention the distances between each stop. "
+        "End with a friendly closing sentence.\n"
         f"Request: {request_info}\n"
-        f"Places: {json.dumps(places)}\n"
-        f"Walking info: {json.dumps(walking_info)}"
+        f"Stops (in order, with details): {json.dumps(places)}\n"
+        f"Walking info (distances between stops): {json.dumps(walking_info)}\n"
+        "Format:\n"
+        "Intro paragraph.\n"
+        "- Stop 1: Name — Description (Fun fact: ...)\n"
+        "- Stop 2: ...\n"
+        "...\n"
+        "Total walking distance: ...\n"
+        "Distances between stops: ...\n"
+        "Closing sentence."
     )
     response = client.chat.completions.create(
         model="gpt-4o",

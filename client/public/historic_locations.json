@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Site of Hayes Place (Pitt the Younger's birthplace)",
+    "description": "Birthplace of William Pitt the Younger in 1759 within his father's country estate.",
+    "address": "Hayes Place Estate (now residential streets, Hayes, Bromley, Greater London)",
+    "latitude": 51.4050,
+    "longitude": -0.0320,
+    "fun_fact": "Although the house was demolished in 1933, nearby Chatham Avenue preserves the 'Pitt' name from the original estate.",
+    "image": "location-images/Hayes_Place.jpg"
+  },
+  {
+    "name": "Holwood House grounds",
+    "description": "Site of Pitt's holiday retreat where he consulted with abolitionist Wilberforce under the famous Wilberforce Oak.",
+    "address": "Holwood Park Drive, Keston, Bromley, Greater London",
+    "latitude": 51.4100,
+    "longitude": 0.0200,
+    "fun_fact": "A conversation in 1788 under the oak prompted Wilberforce to pursue abolition in Parliament.",
+    "image": "location-images/Holwood_House,_Keston_Geograph-3094831-by-Glyn-Baker.jpg"
+  },
+  {
+    "name": "Blue plaque at 120 Baker Street",
+    "description": "Townhouse where Pitt lived from 1803 to 1804 during his second term as Prime Minister.",
+    "address": "120 Baker Street, Marylebone, London W1U 6TU",
+    "latitude": 51.5200,
+    "longitude": -0.1570,
+    "fun_fact": "The English Heritage plaque notes he was the youngest PM ever, aged just 24.",
+    "image": "location-images/Blue_plaque_at_120_Baker_Street.pngBlue_plaque_at_120_Baker_Street.jpeg"
+  },
+  {
+    "name": "Statue of William Pitt the Younger, Hanover Square",
+    "description": "Bronze statue erected in 1831 to honour Pitt, located at the south end of Hanover Square Garden.",
+    "address": "Hanover Square, Mayfair, Westminster W1S",
+    "latitude": 51.5136,
+    "longitude": -0.1437,
+    "fun_fact": "Reform Bill agitators tried to pull it down on its unveiling day, but it survived intact.",
+    "image": "location-images/960px-Statue_of_Pitt_the_Younger,_Hanover_Square_W1.jpeg"
+  },
+  {
+    "name": "Monument to Pitt the Younger, Westminster Abbey",
+    "description": "Memorial above the west entrance honouring Pitt's service to the nation.",
+    "address": "Westminster Abbey, Dean's Yard, Westminster SW1P 3PA",
+    "latitude": 51.4993,
+    "longitude": -0.1273,
+    "fun_fact": "The memorial, by Richard Westmacott, was funded by Parliament after his death in 1806.",
+    "image": "location-images/Monument_to_Pitt_the_Younger_Westminster_Abbey.jpeg"
+  },
+  {
+    "name": "Burial vault of the Pitts, Westminster Abbey north transept",
+    "description": "Final resting place of Pitt the Elder (d.1778) and his son, Pitt the Younger (d.1806).",
+    "address": "North Transept, Westminster Abbey, Westminster SW1P 3PA",
+    "latitude": 51.4993,
+    "longitude": -0.1273,
+    "fun_fact": "Their vault bears their initials on a small stone, despite grand monuments nearby.",
+    "image": "location-images/Burial_vault_of_the_Pitts_Westminster_Abbey_north_transept.jpg"
+  },
+  {
+    "name": "Guildhall monument to Pitt the Younger",
+    "description": "Commemorative plaque/statue in London's medieval Guildhall celebrating Pitt's parliamentary legacy.",
+    "address": "Guildhall, Gresham Street, City of London EC2V 7HH",
+    "latitude": 51.5159,
+    "longitude": -0.0919,
+    "fun_fact": "This 19th-century memorial marks Pitt's reforms in public administration.",
+    "image": "location-images/guildhall.jpeg"
+  },
+  {
+    "name": "Lansdowne House (tenant site)",
+    "description": "Townhouse where Pitt resided temporarily during his premiership in the 1780–1800 period.",
+    "address": "9 Fitzmaurice Place (off Berkeley Square), Mayfair, London W1K",
+    "latitude": 51.5109,
+    "longitude": -0.1480,
+    "fun_fact": "Originally built for Prime Ministers Bute and Shelburne, it later hosted Pitt the Younger.",
+    "image": "location-images/Notting-Hill-Apartment-For-Sale-Lansdowne-House-38_Lo-scaled.webp"
+  },
+  {
+    "name": "Berkeley Square Plane Trees",
+    "description": "Gardens planted in 1789—during Pitt's time—that would have shaded promenades he frequented.",
+    "address": "Berkeley Square, Mayfair, Westminster W1J",
+    "latitude": 51.5110,
+    "longitude": -0.1490,
+    "fun_fact": "The oldest London plane trees here were planted in the exact year of the French Revolution.",
+    "image": "location-images/Berkeley_Square_Plane_Trees.jpg"
+  },
+  {
+    "name": "Site of Argyll House wedding",
+    "description": "Location where Pitt the Elder married Hester Grenville in 1754, linking the Pitt family to Georgian society.",
+    "address": "Argyll Street (site of former Argyll House), Soho, Westminster",
+    "latitude": 51.5145,
+    "longitude": -0.1385,
+    "fun_fact": "Argyll House later belonged to future PM Lord Aberdeen—London stays can be full-circle!",
+    "image": "location-images/Argyll_House.jpg"
+  }
+]

@@ -79,3 +79,26 @@ button {
 h1 {
   margin-bottom: 2rem;
 }
+
+.location-list,
+.location-list * {
+  color: #222 !important;
+}
+
+.modal-content,
+.modal-content * {
+  color: #222 !important;
+}
+
+/* Make Google Maps marker numbers more visible */
+.gm-style .marker-label {
+  background: #fff;
+  color: #111 !important;
+  border: 2px solid #1976d2;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  line-height: 1.2;
+}
