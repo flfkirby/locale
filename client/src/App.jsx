@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { GoogleMap, Marker, useJsApiLoader, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper/modules';
 
 const mapContainerStyle = {
   width: '100%',
@@ -443,84 +448,93 @@ function App() {
       {/* Only show location list if userLocation and no route is generated */}
       {userLocation && !directions && (
         <div style={{ width: '100%', maxWidth: 800, flex: 1, overflowY: 'auto', margin: '0 auto', padding: '2rem 0' }}>
-          <ul className="location-list" style={{ listStyle: 'none', padding: 0 }}>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            spaceBetween={30}
+            slidesPerView={1}
+            style={{ width: '100%' }}
+          >
             {listToDisplay.map((loc, idx) => {
               const inRoute = routeLocations.some(l => l.name === loc.name);
               return (
-                <li
-                  key={loc.name}
-                  className={userLocation ? 'nearby-location' : ''}
-                  style={{
-                    marginBottom: '1.5rem',
-                    background: inRoute ? '#fffde7' : userLocation ? '#e6ffe6' : '#f9f9f9',
-                    border: inRoute ? '2px solid #ffd600' : userLocation ? '2px solid #4caf50' : 'none',
-                    borderRadius: 8,
-                    padding: '1rem',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                    cursor: 'pointer',
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'flex-start',
-                    overflow: 'hidden'
-                  }}
-                  onClick={() => setSelectedLocation(loc)}
-                >
-                  <button
-                    onClick={e => { e.stopPropagation(); toggleRouteLocation(loc); }}
+                <SwiperSlide key={loc.name}>
+                  <li
+                    className={userLocation ? 'nearby-location' : ''}
                     style={{
-                      position: 'absolute',
-                      top: 12,
-                      right: 12,
-                      background: inRoute ? '#1976d2' : '#fff',
-                      color: inRoute ? '#fff' : '#1976d2',
-                      border: '2px solid #1976d2',
-                      borderRadius: '50%',
-                      width: 32,
-                      height: 32,
-                      fontSize: 18,
-                      fontWeight: 'bold',
+                      marginBottom: '1.5rem',
+                      background: inRoute ? '#fffde7' : userLocation ? '#e6ffe6' : '#f9f9f9',
+                      border: inRoute ? '2px solid #ffd600' : userLocation ? '2px solid #4caf50' : 'none',
+                      borderRadius: 8,
+                      padding: '1rem',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                       cursor: 'pointer',
+                      position: 'relative',
                       display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      zIndex: 2
+                      flexDirection: 'column',
+                      justifyContent: 'flex-start',
+                      overflow: 'hidden',
+                      minHeight: 300
                     }}
-                    aria-label={inRoute ? 'Remove from route' : 'Add to route'}
-                    title={inRoute ? 'Remove from route' : 'Add to route'}
+                    onClick={() => setSelectedLocation(loc)}
                   >
-                    ★
-                  </button>
-                  {loc.image && (
-                    <img
-                      src={`/${loc.image}`}
-                      alt={loc.name}
-                      style={{ height: 120, width: '50%', display: 'block', margin: '0 auto 8px auto', objectFit: 'cover', borderRadius: 8 }}
-                    />
-                  )}
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', overflow: 'hidden' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                      <h2 style={{ margin: 0, textAlign: 'center' }}>
-                        {userLocation && <span style={{ marginRight: 8, color: '#1976d2' }}>{idx + 1}.</span>}
-                        {loc.name}
-                      </h2>
-                      {userLocation && (
-                        <span style={{ color: '#888', fontSize: 14, marginTop: 2 }}>
-                          {loc._distance < 1000
-                            ? `${Math.round(loc._distance)} m`
-                            : `${(loc._distance / 1000).toFixed(2)} km`}
-                        </span>
-                      )}
+                    <button
+                      onClick={e => { e.stopPropagation(); toggleRouteLocation(loc); }}
+                      style={{
+                        position: 'absolute',
+                        top: 12,
+                        right: 12,
+                        background: inRoute ? '#1976d2' : '#fff',
+                        color: inRoute ? '#fff' : '#1976d2',
+                        border: '2px solid #1976d2',
+                        borderRadius: '50%',
+                        width: 32,
+                        height: 32,
+                        fontSize: 18,
+                        fontWeight: 'bold',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 2
+                      }}
+                      aria-label={inRoute ? 'Remove from route' : 'Add to route'}
+                      title={inRoute ? 'Remove from route' : 'Add to route'}
+                    >
+                      ★
+                    </button>
+                    {loc.image && (
+                      <img
+                        src={`/${loc.image}`}
+                        alt={loc.name}
+                        style={{ height: 120, width: '50%', display: 'block', margin: '0 auto 8px auto', objectFit: 'cover', borderRadius: 8 }}
+                      />
+                    )}
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', overflow: 'hidden' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                        <h2 style={{ margin: 0, textAlign: 'center' }}>
+                          {userLocation && <span style={{ marginRight: 8, color: '#1976d2' }}>{idx + 1}.</span>}
+                          {loc.name}
+                        </h2>
+                        {userLocation && (
+                          <span style={{ color: '#888', fontSize: 14, marginTop: 2 }}>
+                            {loc._distance < 1000
+                              ? `${Math.round(loc._distance)} m`
+                              : `${(loc._distance / 1000).toFixed(2)} km`}
+                          </span>
+                        )}
+                      </div>
+                      <p style={{ margin: '0.5rem 0 0.25rem 0', color: '#555', fontSize: 15 }}>{loc.address}</p>
+                      <p style={{ margin: 0, fontSize: 15 }}>{loc.description}</p>
+                      <small style={{ color: '#888', fontSize: 15 }}>Fun fact: {loc.fun_fact}</small>
                     </div>
-                    <p style={{ margin: '0.5rem 0 0.25rem 0', color: '#555', fontSize: 15 }}>{loc.address}</p>
-                    <p style={{ margin: 0, fontSize: 15 }}>{loc.description}</p>
-                    <small style={{ color: '#888', fontSize: 15 }}>Fun fact: {loc.fun_fact}</small>
-                  </div>
-                </li>
+                  </li>
+                </SwiperSlide>
               );
             })}
-            {listToDisplay.length === 0 && <li>No locations found.</li>}
-          </ul>
+            {listToDisplay.length === 0 && <SwiperSlide><div>No locations found.</div></SwiperSlide>}
+          </Swiper>
         </div>
       )}
       {/* Details Modal */}
