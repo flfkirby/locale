@@ -513,7 +513,7 @@ function App() {
                     )}
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', overflow: 'hidden' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                        <h2 style={{ margin: 0, textAlign: 'center' }}>
+                        <h2 style={{ margin: 0, textAlign: 'center', color: '#1976d2' }}>
                           {userLocation && <span style={{ marginRight: 8, color: '#1976d2' }}>{idx + 1}.</span>}
                           {loc.name}
                         </h2>
@@ -586,7 +586,7 @@ function App() {
             {arrivedIndex !== null && (
               <h2 style={{ marginTop: 0, color: '#43a047' }}>You have arrived at:</h2>
             )}
-            <h2 style={{ marginTop: arrivedIndex !== null ? 0 : undefined }}>{selectedLocation.name}</h2>
+            <h2 style={{ marginTop: arrivedIndex !== null ? 0 : undefined, color: '#1976d2' }}>{selectedLocation.name}</h2>
             {selectedLocation.image && (
               <img
                 src={`/${selectedLocation.image}`}
